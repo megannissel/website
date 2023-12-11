@@ -1,18 +1,5 @@
-.mb5 {
-  margin-bottom:0.5em;
-}
-.mb10 {
-  margin-bottom:1em;
-}
-.mb15 {
-  margin-bottom:1.5em;
-}
-.mt5 {
-  margin-top:0.5em;
-}
-.mt10 {
-  margin-top:1em;
-}
-.mt15 {
-  margin-top:1.5em;
+body { padding-top: 70px; }
+
+.navbar-custom {
+  background-color: #630c1fff;
 }

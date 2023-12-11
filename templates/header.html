@@ -1,0 +1,27 @@
+{% macro Header(active=None) %}
+<nav class="navbar navbar-expand-md fixed-top bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{url_for('home')}}">
+      <img src="/static/images/bee_icon.jpg" alt="Megan Nissel" width="30"></img>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        {{ NavElement(url_for('home'), "Home", 'home', active) }}
+        {{ NavElement(url_for('about'), "About", 'about', active) }}
+        {{ NavElement(url_for('resume'), "Resume", 'resume', active) }}
+      </ul>
+    </div>
+
+
+  </div>
+</nav>
+{% endmacro %}
+
+{% macro NavElement(link, copy, page, active) %}
+<li class="nav-item">
+  <a class="nav-link {% if active==page %}active{% endif %}" {% if active==page %}aria-current="page"{% endif %} href="{{link}}">{{copy}}</a>
+</li>
+{% endmacro %}
