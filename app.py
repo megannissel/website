@@ -1,20 +1,17 @@
 from datetime import datetime, timedelta
 
-from flask import Flask, render_template
+from flask import Flask
 
-app = Flask(__name__)
+from lib.globals import register_jinja_globals
+from services.index import register_index_endpoints
 
-@app.route('/')
-def home():
-  years = (datetime.utcnow().date() - datetime(2017,1,1).date()).days // 365
-  return render_template('home.html',
-    years=years,
-  )
 
-@app.route('/about')
-def about():
-  return render_template('about.html')
+def initialize_app():
+  app = Flask(__name__)
 
-@app.route('/resume')
-def resume():
-  return render_template('resume.html')
+  register_jinja_globals(app)
+  register_index_endpoints(app)
+
+  return app
+
+app = initialize_app()

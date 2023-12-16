@@ -1,8 +1,9 @@
 {% macro Header(active=None) %}
-<nav class="navbar navbar-expand-md fixed-top bg-dark" data-bs-theme="dark">
+<nav class="navbar navbar-expand-md fixed-top bg-dark-subtle" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{url_for('home')}}">
-      <img src="/static/images/bee_icon.jpg" alt="Megan Nissel" width="30"></img>
+      <img src="/static/images/logo_inverted.png" alt="Logo" width="30" class="me-2"></img>
+      Megan Nissel
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -12,6 +13,8 @@
         {{ NavElement(url_for('home'), "Home", 'home', active) }}
         {{ NavElement(url_for('about'), "About", 'about', active) }}
         {{ NavElement(url_for('resume'), "Resume", 'resume', active) }}
+        {{ NavElementIcon("https://github.com/megannissel", "GitHub", 'github') }}
+        {{ NavElementIcon("https://www.linkedin.com/in/megan-nissel/", "LinkedIn", 'linkedin') }}
       </ul>
     </div>
 
@@ -23,5 +26,11 @@
 {% macro NavElement(link, copy, page, active) %}
 <li class="nav-item">
   <a class="nav-link {% if active==page %}active{% endif %}" {% if active==page %}aria-current="page"{% endif %} href="{{link}}">{{copy}}</a>
+</li>
+{% endmacro %}
+
+{% macro NavElementIcon(link, copy, icon) %}
+<li class="nav-item">
+  <a class="nav-link" href="{{link}}" target="_blank"><i class="d-none d-md-block bi bi-{{icon}}" alt="{{copy}}"></i><span class="d-md-none">{{copy}}</span></a>
 </li>
 {% endmacro %}
