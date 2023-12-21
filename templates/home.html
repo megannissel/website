@@ -17,13 +17,23 @@
       <img src="/static/images/headshot_scaled.png" class="img-fluid rounded float-md-end" alt="headshot"></img>
     </div>
   </div>
-  <div class="row align-items-center justify-content-between mt-5">
-    <div class="col-lg-4 col-md-5">
+  <div class="row align-items-center justify-content-between mt-5 d-flex flex-wrap">
+    <div class="col-lg-4 col-md-5 order-md-first order-last">
       <img src="/static/images/laptop.jpeg" class="img-fluid rounded float-md-end" alt="laptop"></img>
     </div>
-    <div class="col-lg-8 col-md-7">
+    <div class="col-lg-8 col-md-7 order-md-last order-first">
       <p><b>I've got experience with...</b> Python, Flask, Poetry, Docker, Svelte, Jenkins CI, Google Cloud Platform (Application Engine, Datastore, Cloud Storage, Cloud Tasks), MySQL, Git. I've also worked with several APIs, including Zoom, Adobe Sign, Stripe, and Netlify. I'm a Linux person; Ubuntu is my preferred OS (both professionally and personally), and I enjoy working from the command line via the power of tmux and vim.</p>
       <p><b>The biggest project I've ever managed</b> was migrating my company's main GAE-hosted Flask app from Python 2.7 to Python 3.9. This application consists of ~62k lines of Python (plus plenty of HTML templates, CSS, and JS); the conversion required a complete overhaul of our development and testing infrastructure, and careful deployment planning to ensure a seamless transition for our users. I was the only developer working on the project.</p>
+    </div>
+  </div>
+  <div class="row align-items-center justify-content-between mt-5">
+    <div class="col-lg-8 col-md-7">
+      <h2>Project Highlight: Metro Countdown Clock</h2>
+      <p>For many years, I lived just outside of DC and commuted into the city every day via the metro. A friend of mine had previously built a countdown clock for NYC bus arrivals; inspired by this, I took the base code for the LED matrix and adapted it for use with DC's WMATA API.</p>
+      <p>The project code is available on <a href="https://github.com/megannissel/metro-countdown" target="_blank">GitHub</a>. The current configuration displays times for Green and Yellow Line trains going south from U Street (in the direction of Branch Ave/Huntington), but can easily be adapted to display trains in any direction, from any station.</p>
+    </div>
+    <div class="col-lg-4 col-md-5">
+      <img src="/static/images/clock.png" class="img-fluid rounded float-md-end" alt="metro countdown clock"></img>
     </div>
   </div>
 </div>
