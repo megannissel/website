@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% import 'recipe_book/recipe_header.html' as header %}
+
+{% block title %}{{recipe.name}}{% endblock %}
+
+{% block body %}
+{{ header.RecipeHeader() }}
+<div class="container pb-5">
+  <div class="row mt-4 justify-content-between">
+    <div class="col-lg-8 offset-lg-1 col-sm-12">
+      <h1>{{recipe.name}}</h1>
+      <p>
+        {% if recipe.link %}<a class="teal-link" href="{{recipe.link}}" target="_blank"><i class="bi bi-box-arrow-up-left"></i> Link</a> | {% endif %}Tags:
+        {% for tag in recipe.tags %}
+        <span class="badge rounded-pill text-bg-tag">{{tag.display_name}}</span>
+        {% endfor %}
+      </p>
+
+      <hr class="gradient-divider">
+
+      <h3 class="mt-4">Ingredients:</h3>
+      {% for k, v in ingredients.items() %}
+      {% if k %}<h5>{{k}}</h5>{% endif %}
+      <ul class="ingredients-list">
+        {% for i in v %}
+        <li>{{i.ingredient}}</li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+
+      {% if recipe.mid_note %}
+      <p>{{recipe.mid_note}}</p>
+      {% endif %}
+
+      {% if related_recipe %}
+      <h5 class="mt-4">Related Recipes:</h5>
+      <span><a class="teal-link" href="{{url_for('recipe', recipe_name=related_recipe.slug)}}" target="_blank">{{related_recipe.name}}</a></span>
+      {% endif %}
+
+      <hr class="gradient-divider">
+
+      <h3 class="mt-4">Directions:</h3>
+      {% for k, v in directions.items() %}
+      {% if k %}<h5>{{k}}</h5>{% endif %}
+      <ol>
+        {% for d in v %}
+        <li>{{d.step}}</li>
+        {% endfor %}
+      </ol>
+      {% endfor %}
+
+      {% if recipe.footnote %}
+      <p>{{recipe.footnote | safe}}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+

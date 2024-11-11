@@ -1,21 +1,23 @@
+@property --tdi-teal {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #43B6B1;
+}
+
 body {
    padding-top: 70px;
    font-family: "Figtree", sans-serif;
    font-size: 18px;
 }
 
+.tdi-teal {
+  color: var(--tdi-teal);
+}
+
 .navbar-name:hover {
   background-image: linear-gradient(90deg, #00FF1E, #00FF99, #00D9FF);
   color: transparent;
   background-clip: text;
-}
-
-.navbar-custom {
-  background-color: #630c1fff;
-}
-
-.tdi-teal {
-  color: #43B6B1;
 }
 
 .nav-border {
@@ -27,5 +29,106 @@ body {
 .footer-border {
   border: solid;
   border-image: linear-gradient(270deg, #00FF99, #00D9FF 30%, #5E00FF 60%, #A100FF 75%, #DD00FF 100%) 1 / 2px;
+  border-image-width: 2px 0 0 0;
+}
+
+
+/* Recipes */
+
+html {
+  scroll-padding-top: 75px;
+}
+
+.btn-login {
+  background-color: #5E00FF;
+  border-color: #5E00FF;
+}
+
+.btn-login:hover {
+  background-color: #A100FF;
+  border-color: #A100FF;
+}
+
+a.teal-link {
+  text-decoration: none !important;
+  color: var(--tdi-teal);
+}
+
+a.grey-link {
+  text-decoration: none !important;
+  color: #939393;
+}
+
+a.grey-link:hover {
+  color: var(--tdi-teal);
+}
+
+.index-container {
+  max-width: 95vw;
+  margin: 0 auto;
+}
+
+@media (min-width: 700px) {
+  .index-container {
+    max-width: 90vw;
+  }
+}
+
+@media (min-width: 1000px) {
+  .index-container {
+    max-width: 85vw;
+  }
+}
+
+@media (min-width: 1366px) {
+  .index-container {
+    max-width: 80vw;
+  }
+}
+
+.sidebar-header {
+  color: #BCBCBC;
+}
+
+.sidebar {
+  padding-top: 125px;
+  margin-top: -125px;
+}
+
+.sidebar-box {
+  border: solid;
+  border-image: linear-gradient(135deg, #00FF99, #00D9FF 30%, #5E00FF 60%, #A100FF 75%, #DD00FF 100%) 1 / 2px;
+  border-image-width: 1px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.sidebar-button {
+  background: rgb(26, 29, 32);
+  border: solid;
+  border-image: linear-gradient(135deg, #00FF99, #00D9FF 30%, #5E00FF 60%, #A100FF 75%, #DD00FF 100%) 1 / 2px;
+  border-radius: 5px;
+}
+
+.sidebar-button:hover {
+  background: rgb(33, 37, 41);
+}
+
+.ingredients-list li {
+  list-style-type: none;
+}
+
+.text-bg-tag {
+  background-color: var(--tdi-teal);
+  color: #000;
+}
+
+.mono-num {
+  font-feature-settings: 'tnum';
+}
+
+.gradient-divider {
+  border: solid;
+  border-image: linear-gradient(90deg, #00FF99, #00D9FF 30%, #5E00FF 60%, #A100FF 75%, #DD00FF 100%) 1 / 2px;
   border-image-width: 2px 0 0 0;
 }
