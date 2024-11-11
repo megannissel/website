@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% import 'recipe_book/recipe_header.html' as header %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+{{ header.RecipeHeader() }}
+<div class="container pb-5">
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="row mt-5">
+    <div class="col-md-6 offset-md-3">
+      <div class="alert alert-danger">
+        {{ messages[0] }}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endwith %}
+
+  <div class="row mt-5">
+    <div class="col-md-6 offset-md-3">
+      <h3>Log In</h3>
+      <form method="POST" action="{{auth_flow}}">
+        <div class="mb-3">
+          <label for="username-input" class="form-label">Username</label>
+          <input class="form-control" id="username-input" name="username" placeholder="Username">
+        </div>
+        <div class="mb-3">
+          <label for="password-input" class="form-label">Password</label>
+          <input class="form-control" id="password-input" type="password" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-login">Log In</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
