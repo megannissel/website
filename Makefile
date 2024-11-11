@@ -2,6 +2,11 @@ SHELL := /bin/bash
 
 POETRY_RUN := poetry run
 
+.PHONY: clean
+clean:
+	rm -f .make.*
+	rm -rf .venv
+
 ### REQUIREMENTS:
 
 poetry.lock: pyproject.toml
