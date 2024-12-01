@@ -103,6 +103,12 @@ a.grey-link:hover {
   padding: 5px;
 }
 
+@media(max-width:575px) {
+  .sidebar-box {
+    margin-top:40px;
+  }
+}
+
 .sidebar-button {
   background: rgb(26, 29, 32);
   border: solid;
@@ -112,6 +118,10 @@ a.grey-link:hover {
 
 .sidebar-button:hover {
   background: rgb(33, 37, 41);
+}
+
+.sidebar-panel {
+  width:60% !important;
 }
 
 .ingredients-list li {

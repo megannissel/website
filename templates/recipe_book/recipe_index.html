@@ -9,9 +9,9 @@
   <div class="index-container">
     <div class="row justify-content-between">
 
-      <div class="col-sm-3 col-md-2 mt-5">
+      <div class="col-sm-3 col-md-2 order-last order-sm-first mt-5">
         <div class="sticky-top sidebar pe-3">
-          <div class="offcanvas-sm offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+          <div class="offcanvas-sm offcanvas-start sidebar-panel" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
             <div class="offcanvas-header">
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
             </div>
@@ -33,7 +33,7 @@
       <div class="col-md-5 col-sm-9 col-xs-12 mt-5">
         <h1 id="top">Recipes</h1>
         {% for category, recipes in recipe_dict.items() %}
-        <h5 id="cat_{{loop.index}}">{{category}}</h5></a>
+        <h5 id="cat_{{loop.index}}">{{category}}</h5>
         <ul>
           {% for r in recipes %}
           <li><a class="teal-link" href="{{url_for('recipe', recipe_name=r[1])}}">{{r[0]}}</a></li>
